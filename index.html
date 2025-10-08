@@ -2,65 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>David Wilkinson — Software Engineer (PHP/Magento → Python)</title>
-  <meta name="description" content="Portfolio of David Wilkinson: Magento/PHP engineer transitioning to Python. Performance, integrations, data workflows, and pragmatic engineering." />
-  <link rel="canonical" href="https://dcwilkinson.com/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>David Wilkinson — Software Engineer (PHP → Magento → Python)</title>
+  <meta name="description" content="David Wilkinson — UK-based software engineer. PHP since 2006, e-commerce from 2015 (Magento, OpenCart, WooCommerce), now transitioning into Python." />
+  <link rel="canonical" href="https://dcwilkinson.com/"/>
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="David Wilkinson — Software Engineer" />
-  <meta property="og:description" content="Magento/PHP → Python. Performance, integrations, data workflows." />
+  <meta property="og:description" content="PHP since 2006 · E-commerce since 2015 · Transitioning into Python." />
   <meta property="og:url" content="https://dcwilkinson.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dcwilkinson.com/og.jpg" />
+  <!-- Optional social image -->
+  <!-- <meta property="og:image" content="https://dcwilkinson.com/og.jpg" /> -->
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Optional favicon -->
-  <!-- <link rel="icon" href="/favicon.ico"> -->
-
+  <!-- Minimal, neutral styling -->
   <style>
-    :root {
-      --bg: #0b0c10; --card:#111318; --text:#e6e8ee; --muted:#a8b0c0; --accent:#7dd3fc; --accent2:#a78bfa; --border:#1b1f2a;
+    :root{
+      --bg:#ffffff; --text:#0f172a; --muted:#475569; --line:#e2e8f0;
+      --card:#f8fafc; --accent:#0ea5e9; --accent-ink:#0b1020;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0f19; --text:#e5e7eb; --muted:#94a3b8; --line:#1f2637; --card:#0f1524; --accent:#38bdf8; --accent-ink:#041018;}
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1000px 600px at 20% -10%, #142033 0%, transparent 60%) , var(--bg);
-      color:var(--text); line-height:1.6;
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background:var(--bg); color:var(--text); line-height:1.6;
     }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1000px; margin:0 auto; padding:32px 20px 64px}
-    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px}
+    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 64px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:22px}
     .brand{display:flex; align-items:center; gap:14px}
     .avatar{
-      width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent2));
-      display:grid; place-items:center; color:#0b0c10; font-weight:700;
+      inline-size:44px; block-size:44px; border-radius:50%;
+      background:radial-gradient(120% 120% at 30% 20%, var(--accent) 0%, transparent 60%), var(--card);
+      display:grid; place-items:center; color:var(--accent-ink); font-weight:800; letter-spacing:.5px;
     }
-    h1{font-size:clamp(24px,2.6vw,34px); margin:0}
-    nav a{margin-left:16px; color:var(--muted)}
+    h1{font-size:clamp(24px,2.4vw,34px); margin:0}
+    nav a{margin-left:14px; color:var(--muted); text-decoration:none}
+    nav a:hover{color:var(--text)}
     .hero{
-      border:1px solid var(--border); background:linear-gradient(180deg,#0e1116, #0b0c10);
-      border-radius:14px; padding:26px; margin-bottom:28px;
+      border:1px solid var(--line); background:var(--card);
+      border-radius:14px; padding:22px; margin-bottom:22px;
     }
     .hero h2{margin:0 0 8px; font-size:clamp(22px,2.2vw,28px)}
     .muted{color:var(--muted)}
-    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .badge{border:1px solid var(--border); color:var(--muted); padding:6px 10px; border-radius:999px; font-size:13px}
-    .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin:18px 0 6px}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .badge{border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:13px; color:var(--muted); background:transparent}
+    section{margin-top:26px}
+    .section-title{font-size:20px; margin:0 0 10px}
+    .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .card{
-      border:1px solid var(--border); background:var(--card); border-radius:14px; padding:18px; transition:transform .12s ease, border-color .12s ease;
+      border:1px solid var(--line); border-radius:12px; padding:16px; background:transparent;
+      transition:transform .1s ease, border-color .1s ease;
     }
-    .card:hover{transform:translateY(-2px); border-color:#2a3245}
-    .card h3{margin:0 0 6px; font-size:18px}
-    .meta{font-size:13px; color:var(--muted); margin:6px 0 10px}
-    footer{margin-top:32px; border-top:1px solid var(--border); padding-top:16px; color:var(--muted); font-size:14px}
-    .links{display:flex; gap:14px; flex-wrap:wrap}
-    .cta{display:inline-block; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#0b0c10; font-weight:700; padding:10px 14px; border-radius:10px}
+    .card:hover{transform:translateY(-2px); border-color:#b9c2d0}
+    .card h3{margin:0 0 6px; font-size:17px}
+    .meta{font-size:13px; color:var(--muted); margin:6px 0 8px}
+    .linkish{color:var(--accent); text-decoration:none}
+    .linkish:hover{text-decoration:underline}
+    .list{display:grid; gap:10px; padding-left:18px}
+    .list li{margin-left:6px}
+    footer{margin-top:34px; border-top:1px solid var(--line); padding-top:16px; color:var(--muted); font-size:14px}
+    .cta{display:inline-block; background:var(--accent); color:#00131d; font-weight:700; padding:10px 14px; border-radius:10px; text-decoration:none}
     .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
   </style>
 
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -72,7 +81,7 @@
       "https://github.com/YOUR_GITHUB",
       "https://www.linkedin.com/in/YOUR_LINKEDIN"
     ],
-    "knowsAbout":["Magento 2","PHP 8","Elasticsearch","Python","FastAPI","PostgreSQL","AWS","DevOps"]
+    "knowsAbout":["Magento 2","PHP","Elasticsearch","Python","APIs","E-commerce"]
   }
   </script>
 </head>
@@ -84,7 +93,7 @@
         <div class="avatar" aria-hidden="true">DW</div>
         <div>
           <h1>David Wilkinson</h1>
-          <div class="muted">Magento/PHP engineer transitioning to Python — I ship fast, stable, boringly reliable stuff.</div>
+          <div class="muted">Software Engineer — PHP & E-commerce veteran, now moving into Python.</div>
         </div>
       </div>
       <nav aria-label="Primary">
@@ -94,54 +103,69 @@
       </nav>
     </header>
 
-    <section class="hero" aria-labelledby="tagline">
-      <h2 id="tagline">I turn messy systems into clean, performant pipelines.</h2>
-      <p class="muted">Magento → Python. Integrations, data wrangling, search, and the “why is PROD on fire” kind of problems.</p>
+    <section class="hero" aria-labelledby="headline">
+      <h2 id="headline">I build practical, reliable software for real businesses.</h2>
+      <p class="muted">From Magento search tuning and gnarly integrations to clean Python services and data pipelines — I like solutions that ship and keep shipping.</p>
       <div class="badges" aria-label="Tech stack">
+        <span class="badge">PHP 8.x</span>
         <span class="badge">Magento 2</span>
-        <span class="badge">PHP 8.2</span>
+        <span class="badge">OpenCart</span>
+        <span class="badge">WooCommerce</span>
         <span class="badge">Elasticsearch</span>
         <span class="badge">Python</span>
         <span class="badge">FastAPI</span>
         <span class="badge">PostgreSQL</span>
         <span class="badge">Docker</span>
-        <span class="badge">AWS</span>
-      </div>
-    </section>
-
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Selected Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <h3><a href="https://github.com/YOUR_GITHUB/your-project" target="_blank" rel="noopener">DocuChat</a></h3>
-          <div class="meta">Python · FastAPI · RAG</div>
-          <p>Document Q&A service with embeddings and chunking; deployed as a tidy FastAPI with background workers.</p>
-        </article>
-        <article class="card">
-          <h3>Magento Search Overhaul</h3>
-          <div class="meta">Magento 2 · Elasticsearch</div>
-          <p>Relevance tuning, synonyms, and analyzers for multilingual catalogs. Cut null-result rate by 32%.</p>
-        </article>
-        <article class="card">
-          <h3>ETL for Price Matrix</h3>
-          <div class="meta">Python · Pandas · S3</div>
-          <p>Nightly ingestion + validation for supplier feeds; diff-based updates so cron jobs stop crying.</p>
-        </article>
       </div>
     </section>
 
     <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p>I’ve been a PHP developer since 2006, and transitioned to Ecommerce development (namely Magento/Adobe Commerce) in 2015.</p>
+      <h2 class="section-title" id="about-title">About</h2>
+      <p>
+        I’ve been a <strong>PHP developer since 2006</strong>, cutting my teeth on bespoke apps and
+        agency work back when CSS resets were still a personality trait. In <strong>2015 I moved into e-commerce</strong>,
+        shipping and maintaining stores across <strong>Magento, OpenCart, and WooCommerce</strong> — with a focus on
+        performance, search relevance, and integrations that don’t fall over on promotion day.
+      </p>
+      <p>
+        These days I’m <strong>transitioning into Python</strong> to build APIs, data workflows, and the glue that keeps
+        systems talking. I like small, focused services, good observability, and deleting code that doesn’t earn its keep.
+      </p>
+      <ul class="list">
+        <li>PHP since 2006 — battle-tested in production</li>
+        <li>E-commerce from 2015 — Magento, OpenCart, WooCommerce</li>
+        <li>Now moving into Python — FastAPI, ETL, light data engineering</li>
+      </ul>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Selected Work</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a class="linkish" href="https://github.com/YOUR_GITHUB/docuchat" target="_blank" rel="noopener">DocuChat</a></h3>
+          <div class="meta">Python · FastAPI · RAG</div>
+          <p>Document Q&A with chunking/embeddings, background workers, and clean endpoints. Pragmatic, fast, and memory-friendly.</p>
+        </article>
+        <article class="card">
+          <h3>Magento Search Revamp</h3>
+          <div class="meta">Magento 2 · Elasticsearch</div>
+          <p>Analyzer tuning, synonyms, and scoring tweaks across multilingual catalogs. Fewer dead-ends, more conversions.</p>
+        </article>
+        <article class="card">
+          <h3>ETL for Price Feeds</h3>
+          <div class="meta">Python · Pandas · S3</div>
+          <p>Nightly ingestion + validation with diff-based updates and decent logging. Cron jobs that don’t cry.</p>
+        </article>
+      </div>
     </section>
 
     <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
+      <h2 class="section-title" id="contact-title">Contact</h2>
       <p class="muted">Best way to reach me:</p>
-      <div class="links">
-        <a href="https://github.com/dcwilkinson" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/dwilkinson89" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+      <p>
+        <a class="linkish" href="https://github.com/dcwilkinson" target="_blank" rel="noopener">GitHub</a> ·
+        <a class="linkish" href="https://www.linkedin.com/in/dcwilkinson89" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
     </section>
 
     <footer>
